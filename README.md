@@ -31,10 +31,10 @@ python -c "from src.data_pipeline import load_payments; from src.features import
 python -m src.generate_charts
 ```
 
-![Cashless volume trend](assets/charts/01_cashless_volume_trend.png)
+![Probabilistic cashless payment volume forecast](assets/charts/01_cashless_volume_trend.png)
 
-The trend chart separates structural payment adoption from recurring seasonal movement. This distinction supports capacity planning and gives model owners a clear basis for challenging whether a forecast reflects business change or calendar effects.
+The fan chart connects the last observed payment volume to the forecast median and separates structural growth from seasonal movement with P10–P90 and P25–P75 prediction intervals.
 
-![Forecast error](assets/charts/02_model_error.png)
+![Forecast horizon degradation and backtest error](assets/charts/02_model_error.png)
 
-The error distribution is a monitoring artefact rather than a decorative statistic. Persistent skew or stress-period concentration can indicate calibration drift, regime change or hierarchy-reconciliation weakness, informing targeted recalibration and review.
+The horizon-error chart compares the Hierarchical Ensemble with a Naive Seasonal Baseline across MAPE and RMSE, making degradation and model-governance trade-offs visible.
